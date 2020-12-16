@@ -13,4 +13,5 @@ Povolené príkazy z wifi:
 
  - [https://www.hwkitchen.cz/geekservo-9g-360-kontinualni-kompatibilni-s-lego/](https://www.hwkitchen.cz/geekservo-9g-360-kontinualni-kompatibilni-s-lego/)
  - [https://nettigo.eu/attachments/590](https://nettigo.eu/attachments/590)
- - [https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html) - ESP8266WiFI.h
+ - [ESP8266WiFI.h](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+ - [Arduino/Reference/WiFi](https://www.arduino.cc/en/Reference/WiFi)
