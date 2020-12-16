@@ -6,7 +6,7 @@
  * @copyright  Copyright (c) 2016 - 2020 Ing. Peter VOJTECH ml.
  * @license
  * @link       http://petak23.echo-msz.eu
- * @version 1.0.3
+ * @version 1.0.4
  * 
  * Servo:
  * https://www.hwkitchen.cz/geekservo-9g-360-kontinualni-kompatibilni-s-lego/
@@ -26,7 +26,7 @@ IPAddress local_IP(192,168,4,200);
 IPAddress gateway(192,168,4,100);
 IPAddress subnet(255,255,255,0);
 
-const char* host     = "auticko";
+const char* host = "ESPsoftAP_auticko";
 
 WiFiClient client;
 
@@ -43,19 +43,19 @@ void setup() {
   Serial.println(WiFi.softAPConfig(local_IP, gateway, subnet));
 
   Serial.print("Nastavujem soft-AP pripojenie ...");
-  Serial.println(WiFi.softAP("ESPsoftAP_auticko") ? "Ready" : "Failed!");
+  Serial.println(WiFi.softAP(host) ? "Ready" : "Failed!");
   
+  IPAddress my_IP = WiFi.softAPIP();
   Serial.print("Moja IP adresa je:");
-  Serial.println(WiFi.softAPIP());
+  Serial.println(my_IP);
 
-  // Use WiFiClient class to create TCP connections
-  const int httpPort = 80;
-  if (!client.connect(host, httpPort)) {
-    Serial.println("connection failed");
+  if (!client.connect(my_IP, 80)) {
+    Serial.print("Pripojenie na "); Serial.print(my_IP);
+    Serial.println(":80 sa NEPODARILO!!!");
     return;
   } else {
-    Serial.print("Host "); Serial.print(host);
-    Serial.println(" pripojený");
+    Serial.print("Pripojený na "); Serial.print(my_IP);
+    Serial.println(":80 v poriadku.");
   }
 }
 
