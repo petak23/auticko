@@ -10,6 +10,11 @@ Povolené príkazy z wifi:
  - **moCxyz** - pohyb motora("mo"), kde C je číslo motora a xyz = 0..127 - vzad; 128 - stop; 129..255 - vpred
  - **ledx** - on/off vstavanej LED, kde x = 0 - off; x = 1 - on
 
+## Riadenie rýchlosti a smeru
+Servo sa zastaví pri nastavení 90°. Zadaním menšej hodnoty ako 90° sa servo roztočí na jednu stranu a zadaním větší hodnoty na druhú. Čím viac se hodnota blíži 180° alebo 0°, tým väčšie sú otáčky serva.     
+
+Nastavenie možné aj priamo cez PWM, kde 0° = 600; 90° = 1500; 180° = 2400.
+
 ## Odkazy a referencie
 
  - [https://www.hwkitchen.cz/geekservo-9g-360-kontinualni-kompatibilni-s-lego/](https://www.hwkitchen.cz/geekservo-9g-360-kontinualni-kompatibilni-s-lego/)
